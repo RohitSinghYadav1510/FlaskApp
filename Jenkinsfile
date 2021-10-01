@@ -8,7 +8,7 @@ pipeline {
      stage('Test Application') {
             agent {
                 docker {
-                    image 'rohit1015/flaskapp:v1'
+                    image 'rohit1015/flasksonar:v3'
                    }
                 }
             steps {
