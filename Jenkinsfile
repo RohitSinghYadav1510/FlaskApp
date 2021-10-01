@@ -19,7 +19,7 @@ pipeline {
      stage("Code Analysis Using Sonar"){
           agent any
           steps {
-            sh 'docker run --rm --net=host -v ${PWD}:/sonarqube-flask sonarsource/sonar-scanner-cli sonar-scanner -D sonar.projectBaseDir=/sonarqube-flask'
+            sh 'docker run --rm --net=host -v pwd:/sonarqube-flask sonarsource/sonar-scanner-cli sonar-scanner -D sonar.projectBaseDir=/sonarqube-flask'
             }
          }
     }
