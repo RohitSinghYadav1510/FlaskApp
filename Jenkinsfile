@@ -31,6 +31,7 @@ pipeline {
            sh '''
            kubectl run myapp2 --image=rohit1015/flaskapp:v1
            kubectl expose pod myapp2 --port=5000 --type=LoadBalancer
+           sleep 30
            kubectl get svc
            '''
         }
