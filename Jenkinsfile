@@ -24,10 +24,14 @@ pipeline {
          }
      stage("Deploy"){
         agent any
+        input{
+                message "Do You Wanted To Deploy??"
+            }
         steps {
            sh '''
            kubectl run myapp2 --image=rohit1015/flaskapp:v1
            kubectl expose pod myapp2 --port=5000 --type=LoadBalancer
+           kubectl get svc
            '''
         }
      }
