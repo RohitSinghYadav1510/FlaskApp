@@ -8,7 +8,7 @@ pipeline {
      stage('Test Application') {
             agent {
                 docker {
-                    image 'rohit1015/flaskapp:v1'
+                    image 'rohit1015/flaskapp:v2'
                    }
                 }
             steps {
@@ -22,5 +22,10 @@ pipeline {
              sh 'docker run --rm --net=host -v ${PWD}:/sonarqube-flask sonarsource/sonar-scanner-cli sonar-scanner -D sonar.projectBaseDir=/sonarqube-flask'
             }
          }
+     stage("Deploy"){
+        agent any
+        steps {
+           sh 'kubectl get nodes'
+        }
     }
 }
