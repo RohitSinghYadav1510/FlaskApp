@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deploy
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: production
+
+  template:
+    metadata:
+      name: myweb-flaskpod
+      labels:
+       env: production
+
+    spec:
+      containers:
+      - name: flask-con
+        image: rohit1015/flaskapp:v1
