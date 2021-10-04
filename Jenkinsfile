@@ -24,7 +24,7 @@ pipeline {
               sh 'py.test --cov-report xml:coverage.xml --cov=. --junitxml=result.xml test.py'
               }
         }
-    /*
+    
      stage("Code Analysis Using Sonar"){
           agent any
           steps {
@@ -46,6 +46,5 @@ pipeline {
            '''
         }
      }
-     */
     }
 }
