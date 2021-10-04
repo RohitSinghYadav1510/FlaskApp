@@ -13,8 +13,8 @@ RUN pip install -r requirements.txt
 COPY . /usr/src/app
 
 
-ENTRYPOINT ["python3"]
+#ENTRYPOINT ["python3"]
 
-CMD ["app.py"]
+#CMD ["app.py"]
 
 EXPOSE 5000
